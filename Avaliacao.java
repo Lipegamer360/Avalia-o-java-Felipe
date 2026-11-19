@@ -1,7 +1,27 @@
+void main(){
+    int clientes = Integer.parseInt(IO.readln("Digite quantos clientes foram atendidos: "));
+    int totalclientes = clientes;
+    double tempo = 0;
+    
+    do {
+        double espera = Integer.parseInt(IO.readln("Digite quanto você esperou para ser atendido: "));
+        tempo = tempo + espera;
+        
+        clientes = clientes - 1;
+    
+    } while(clientes > 0);
 
-/* Se você está vendo esta mensagem é porque fez tudo certo até aqui. 
-    Boa prova! */
+    double media = tempo / totalclientes;
 
-void main() {
-    IO.println("Boa Prova!");
+    if (media <= 10) {
+        System.out.println("Atendimento Ágil");
+    }
+    else{
+        if (media <= 20) {
+            System.out.println("Atendimento regular");
+        }
+        else{
+            System.out.println("Atendimento Lento: Reforçar a Equipe");
+    }
+    }
 }
